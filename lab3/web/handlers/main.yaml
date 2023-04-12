@@ -16,3 +16,4 @@
     src: style.css
     dest: /usr/share/nginx/html
     mode: 0644 
+    
