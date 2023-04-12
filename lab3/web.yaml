@@ -1,0 +1,4 @@
+- name: web_role
+  hosts: all
+  roles:
+    - web

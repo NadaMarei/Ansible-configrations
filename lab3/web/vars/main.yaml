@@ -1,0 +1,3 @@
+package_name: nginx
+package_state: present
+html_name: Nada-Marey

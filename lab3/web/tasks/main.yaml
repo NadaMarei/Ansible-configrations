@@ -1,0 +1,16 @@
+- name: update-apt
+  ansible.builtin.apt:
+    update_cache: yes
+    
+- name: install-nginx
+  tags: install
+  ansible.builtin.package:
+    name: nginx
+    state: present
+  notify: restart-nginx
+
+- name: remove-nginx
+  tags: remove
+  ansible.builtin.package:
+    name: nginx
+    state: absent
