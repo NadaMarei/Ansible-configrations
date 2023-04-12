@@ -1,0 +1,17 @@
+- name: nginx-tags
+  hosts: all
+  vars:
+    - package_name: nginx
+    - package_state: present
+  tasks:
+  - name: update-apt
+    tags: update
+    ansible.builtin.apt:
+      update_cache: true
+
+  - name: install-nginx
+    tags: install
+    ansible.builtin.package:
+      name: '{{package_name}}'
+      state: '{{package_state}}'
+

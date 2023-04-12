@@ -1,0 +1,29 @@
+- name: nginx-httpd
+  hosts: all
+  tasks:
+    - name: install-nginx
+      ansible.builtin.package:
+        name: nginx
+        state: present
+      when: ansible_facts['distribution']=='CentOS'
+      register: installed_nginx
+
+    - name: install-httpd
+      ansible.builtin.package:
+        name: httpd
+        state: present
+      when: ansible_facts['distribution']=='Debian'
+      register: installed_httpd
+
+    - name: restart-nginx
+      ansible.builtin.sysvinit:
+        name: nginx
+        state: restarted
+      when: installed_nginx.changed==true
+
+    - name: restart-httpd
+      ansible.builtin.sysvinit:
+        name: httpd
+        state: restarted
+      when: installed_httpd.changed==true
+      
