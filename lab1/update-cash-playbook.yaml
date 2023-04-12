@@ -1,0 +1,23 @@
+- name: update-cash
+  gather_facts: false
+  hosts: all
+  tasks:
+  - name: apt-update
+    ansible.builtin.apt:
+      update_cache: yes
+
+  - name: install-nginx
+    ansible.builtin.package:
+      name: nginx
+      state: present
+
+  - name: copy-file
+    ansible.builtin.copy:
+      src: ./index.html
+      dest: /usr/share/nginx/html
+      mode: 0644
+
+  - name: start-nginx
+    ansible.builtin.sysvinit:
+      name: nginx
+      state: started
