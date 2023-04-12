@@ -1,7 +1,0 @@
-package_name: nginx
-package_state: present
-
-package_list:
-  - {name: "nginx"   , state: "present"}
-  - {name: "curl"    , state: "absent"}
-  - {name: "apache2" , state: "latest"}
