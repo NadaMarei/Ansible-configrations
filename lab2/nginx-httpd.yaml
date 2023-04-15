@@ -12,7 +12,7 @@
       ansible.builtin.package:
         name: httpd
         state: present
-      when: ansible_facts['distribution']=='fedora'
+      when: ansible_facts['distribution']=='Ubuntu'
       register: installed_httpd
 
     - name: restart-nginx
