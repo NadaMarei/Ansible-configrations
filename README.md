@@ -73,7 +73,7 @@ Prerequisites
     - vars.yaml: The Ansible variable file that defines the variables used in the nginx-vars.yaml and package-loops.yaml playbooks.
     
 
-###How to use the playbooks
+### How to use the playbooks
 
 #### To use the playbooks, follow these steps:
 
