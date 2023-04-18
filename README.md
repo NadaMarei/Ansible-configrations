@@ -1,8 +1,6 @@
 # Ansible-labs-ITI
 
-## Lab 1
-
-### Ansible Playbook to Update Cash
+## Lab 1 : Ansible Playbook to Update Cash
 
 This Ansible playbook is designed to update the cash of a web server by installing and configuring Nginx web server. The playbook includes tasks to update the package cache, install Nginx, copy an HTML file to the web server, and start the Nginx service.
 Prerequisites
