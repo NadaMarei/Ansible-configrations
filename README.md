@@ -1,4 +1,5 @@
 
+    <img src="./motd/files/ansible.png" alt="Logo" width="400" height="200">
 
 # Lab 1 : Ansible Playbook to Update Cash
 
