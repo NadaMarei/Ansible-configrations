@@ -92,3 +92,76 @@ Prerequisites
 
 In these Ansible playbooks, you learned how to use Ansible to configure a web server by installing and configuring Nginx and Apache HTTP server, managing packages using tags, variables, and loops. With this knowledge, you can create more complex playbooks to manage web servers, such as configuring SSL, setting up load balancing, or deploying web applications.
 
+
+## Lab 3 : Ansible Role for Web Server Configuration
+
+This Ansible role installs and configures a web server by installing Nginx, updating the package cache, and copying HTML and CSS files to the web server. The role includes a tasks folder that defines the tasks to be performed, a templates folder that contains the HTML template file, a files folder that contains the CSS file, a handlers folder that defines the handlers to be executed, and a vars folder that defines the variables used in the role.
+Prerequisites
+
+### Before running this role, you need to have the following:
+
+    - Ansible installed on your local machine
+    - SSH access to the target web server(s)
+
+### Role overview
+
+This role consists of the following files and folders:
+
+    - ansible.cfg: The Ansible configuration file that sets up some default options for the role, such as the inventory file location, the private key to use for SSH authentication, and the remote user to use for SSH connections.
+    
+    - inventory: The Ansible inventory file that lists the target web server(s) to configure. In this case, there are two web servers with the IP addresses 172.17.0.3 and 172.17.0.4.
+    
+    - web.yaml: The Ansible playbook file that applies the web role to the target web server(s).
+    
+    - web folder: The Ansible role folder that contains the tasks, templates, files, handlers, and variables for the role.
+
+#### Tasks
+
+##### The tasks folder contains the main tasks for the role. These tasks include:
+
+    - Updating the package cache using the apt module.
+    - Installing Nginx using the package module and notifying the restart-nginx handler.
+    - Removing Nginx using the package module and notifying the restart-nginx handler.
+    - Notifying the restart-nginx handler when Nginx is installed or removed.
+
+#### Templates
+
+The templates folder contains the `HTML` template file that will be copied to the `web server`. The template includes a `placeholder` for the name of the user, which will be replaced with the actual name during the `playbook` execution.
+
+#### Files
+
+The files folder contains the `CSS` file that will be copied to the `web server`. The CSS file defines the style for the HTML template.
+
+#### Handlers
+
+##### The handlers folder contains the handlers that will be triggered by the tasks. These handlers include:
+
+    - Restarting Nginx using the sysvinit module.
+    - Copying the HTML template to the web server using the template module and notifying the copy_style handler.
+    - Copying the CSS file to the web server using the copy module.
+
+#### Variables
+
+##### The vars folder contains the variables used in the role. These variables include:
+
+    - The package name and state for Nginx.
+    - The name to be displayed in the HTML template.
+
+### How to use the role
+
+#### To use the role, follow these steps:
+
+    1- Edit the inventory file to list the IP addresses or hostnames of the web server(s) you want to configure.
+
+    2- Edit the web.yaml playbook file to include the web role.
+
+    3- Run the following command to execute the playbook:
+
+    4- ansible-playbook web.yaml -i inventory
+    ```
+
+#### After running the playbook, the web server(s) should be configured according to the tasks in the role.
+
+### Conclusion
+
+With this Ansible role, you learned how to use Ansible to configure a web server by installing Nginx, updating the package cache, and copying HTML and CSS files to the web server. This role can be extended to include additional tasks, such as configuring SSL or deploying web applications.
