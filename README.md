@@ -5,18 +5,21 @@ Prerequisites
 
 ### Before running this playbook, you need to have the following:
 
-    Ansible installed on your local machine
-    SSH access to the target web server(s)
-    The index.html file that you want to copy to the web server
+    - Ansible installed on your local machine
+    - SSH access to the target web server(s)
+    - The index.html file that you want to copy to the web server
 
 ### Playbook overview
 
 #### The playbook consists of the following files:
 
     - ansible.cfg: The Ansible configuration file that sets up some default options for the playbook, such as the inventory file location, the private key to use for SSH authentication, and the remote user to use for SSH connections.
+    
     - inventory: The Ansible inventory file that lists the target web server(s) to update. In this case, there is only one web server with the IP address 172.17.0.3.
+    
     - update-cash-playbook.yaml: The Ansible playbook file that contains the tasks to update the cash. The tasks include updating the package cache, installing Nginx, copying the index.html file to the web server, and starting the Nginx service.
-    index.html: The HTML file that will be copied to the web server.
+    
+    - index.html: The HTML file that will be copied to the web server.
 
 ### How to use the playbook
 
@@ -28,7 +31,7 @@ Prerequisites
 
     3- Run the following command to execute the playbook:
 
-    4- ansible-playbook update-cash-playbook.yaml -i inventory
+        ansible-playbook update-cash-playbook.yaml -i inventory
     
 
     This will run the playbook and execute the tasks on the target web server(s).
@@ -75,14 +78,14 @@ Prerequisites
 
 #### To use the playbooks, follow these steps:
 
-    Edit the inventory file to list the IP addresses or hostnames of the web server(s) you want to configure.
+    1- Edit the inventory file to list the IP addresses or hostnames of the web server(s) you want to configure.
 
-    Run the following command to execute a playbook:
+    2- Run the following command to execute a playbook:
 
-    ansible-playbook playbook-file.yaml -i inventory
-    ```
+        ansible-playbook playbook-file.yaml -i inventory
 
-    Replace `playbook-file.yaml` with the name of the playbook you want to execute.
+    3- Replace `playbook-file.yaml` with the name of the playbook you want to execute.
+    
 
 #### After running the playbook(s), the web server(s) should be configured according to the tasks in the playbook(s).
 
@@ -155,8 +158,8 @@ The files folder contains the `CSS` file that will be copied to the `web server`
 
     3- Run the following command to execute the playbook:
 
-    4- ansible-playbook web.yaml -i inventory
-    ```
+        ansible-playbook web.yaml -i inventory
+    
 
 #### After running the playbook, the web server(s) should be configured according to the tasks in the role.
 
