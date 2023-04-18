@@ -1,6 +1,6 @@
-# Ansible-labs-ITI
 
-## Lab 1 : Ansible Playbook to Update Cash
+
+# Lab 1 : Ansible Playbook to Update Cash
 
 This Ansible playbook is designed to update the cash of a web server by installing and configuring Nginx web server. The playbook includes tasks to update the package cache, install Nginx, copy an HTML file to the web server, and start the Nginx service.
 Prerequisites
@@ -44,7 +44,7 @@ In this Ansible playbook, you learned how to use Ansible to update the cash of a
 
 
 
-## Lab 2 : Ansible Playbooks for Web Server Configuration
+# Lab 2 : Ansible Playbooks for Web Server Configuration
 
 This repository contains multiple Ansible playbooks that can be used to configure a web server. Each playbook focuses on a specific task, such as installing and configuring Nginx or managing packages using loops and variables.
 Prerequisites
@@ -93,7 +93,7 @@ Prerequisites
 In these Ansible playbooks, you learned how to use Ansible to configure a web server by installing and configuring Nginx and Apache HTTP server, managing packages using tags, variables, and loops. With this knowledge, you can create more complex playbooks to manage web servers, such as configuring SSL, setting up load balancing, or deploying web applications.
 
 
-## Lab 3 : Ansible Role for Web Server Configuration
+# Lab 3 : Ansible Role for Web Server Configuration
 
 This Ansible role installs and configures a web server by installing Nginx, updating the package cache, and copying HTML and CSS files to the web server. The role includes a tasks folder that defines the tasks to be performed, a templates folder that contains the HTML template file, a files folder that contains the CSS file, a handlers folder that defines the handlers to be executed, and a vars folder that defines the variables used in the role.
 Prerequisites
